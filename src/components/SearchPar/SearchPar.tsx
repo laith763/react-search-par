@@ -1,5 +1,6 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef } from "react";
 import "./SearchPar.css";
+import useFetchSuggestion from "./useFetchSuggestion";
 
 interface Suggestion {
   id: string;
@@ -9,41 +10,11 @@ interface Suggestion {
 
 function SearchPar() {
   const [searchValue, setSearchValue] = useState("");
-  const [filteredSuggestions, setFilteredSuggestions] = useState<Suggestion[]>(
-    []
-  );
-  const [isLoading, setIsLoading] = useState(false);
   const [page, setPage] = useState(1);
-
   const containerRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const fetchSuggestions = async () => {
-      debugger;
-      if (searchValue.length >= 3) {
-        setIsLoading(true);
-
-        try {
-          const response = await fetch(
-            `http://localhost:3003/proudect?search=${encodeURIComponent(
-              searchValue
-            )}&limit=5&page=${page}`
-          );
-          if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-          }
-          const data: Suggestion[] = await response.json();
-          setFilteredSuggestions((prev) => [...prev, ...data]);
-        } catch (error) {
-          console.error("Error fetching suggestions:", error);
-        } finally {
-          setIsLoading(false);
-        }
-      }
-    };
-
-    fetchSuggestions();
-  }, [searchValue, page]);
+  const { filteredSuggestions, setFilteredSuggestions, isLoading } =
+    useFetchSuggestion(searchValue, page);
 
   const handleClear = () => {
     setSearchValue("");
