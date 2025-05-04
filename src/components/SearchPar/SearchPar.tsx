@@ -88,7 +88,7 @@ function SearchPar() {
   return (
     <div className="search-container">
       <div
-        className={`search-google-wrapper ${
+        className={`search-wrapper ${
           filteredSuggestions.length > 0 ? "rounded-t-2xl" : "rounded-2xl"
         }`}
       >
@@ -126,7 +126,7 @@ function SearchPar() {
                       <img
                         src={suggestion.avatar}
                         alt={`${suggestion.name}'s avatar`}
-                        className="author-avatar"
+                        className="avatar"
                       />
                       <div className="suggestion-content">
                         <span className="suggestion-text">
