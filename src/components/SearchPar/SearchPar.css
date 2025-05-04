@@ -1,0 +1,210 @@
+/* SearchPar.css */
+.search-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 600px;
+    padding: 0 20px;
+  }
+  
+  .search-google-wrapper {
+    position: relative;
+    background: white;
+    box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+    width: 100%;
+  }
+  
+  .search-input-container {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+  }
+  
+  .search-icon {
+    color: #9aa0a6;
+    margin-right: 13px;
+  }
+  
+  .search-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    line-height: 24px;
+    color: #202124;
+    background: transparent;
+  }
+  
+  .search-input::placeholder {
+    color: #9aa0a6;
+  }
+  
+  .clear-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 8px;
+    color: #9aa0a6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .clear-button:hover {
+    color: #202124;
+  }
+  
+  .suggestions-container {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    box-shadow: 0 2px 5px rgba(32, 33, 36, 0.28);
+    padding-top: 10px;
+    padding-bottom: 12px;
+    z-index: 100;
+  }
+  
+  .suggestion-item {
+    display: flex;
+    align-items: center;
+    padding: 6px 20px;
+    cursor: pointer;
+    color: #202124;
+  }
+  
+  .suggestion-item:hover,
+  .suggestion-item.highlighted {
+    background-color: #f1f3f4;
+  }
+  
+  .suggestion-icon {
+    margin-right: 14px;
+    color: #9aa0a6;
+    flex-shrink: 0;
+  }
+  
+  .suggestion-text {
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  
+  .suggestion-text strong {
+    font-weight: 600;
+  }
+
+  /* SearchPar.css - Add these styles */
+.suggestion-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.suggestion-meta {
+  display: flex;
+  gap: 12px;
+  font-size: 14px;
+  color: #666;
+}
+
+.author-name {
+  font-weight: 500;
+}
+
+.publish-date {
+  color: #999;
+}
+
+.suggestion-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.tag {
+  background-color: #f1f3f4;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  color: #5f6368;
+}
+
+.text-red-500 {
+  color: #dc2626;
+}
+
+/* Add these to your existing SearchPar.css */
+
+.suggestion-content-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  width: 100%;
+}
+
+.author-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 1px solid #e0e0e0;
+}
+
+.suggestion-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.suggestion-meta {
+  display: flex;
+  gap: 12px;
+  font-size: 14px;
+  color: #666;
+}
+
+.author-name {
+  font-weight: 500;
+}
+
+.publish-date {
+  color: #999;
+}
+
+.suggestion-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.tag {
+  background-color: #f1f3f4;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  color: #5f6368;
+}
+
+.text-red-500 {
+  color: #dc2626;
+}
+
+/* Update existing styles to accommodate avatar */
+.suggestion-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px; /* Increased padding for avatar space */
+  cursor: pointer;
+  color: #202124;
+}
