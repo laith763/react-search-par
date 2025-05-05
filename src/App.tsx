@@ -1,10 +1,13 @@
-import SearchPar from "./components/SearchPar/SearchPar";
 import "./App.css";
+import SearchProvider from "./components/SearchPar/context/SearchDataProvider";
+import SearchParContainer from "./containers/SearchPar/Container";
 
 function App() {
   return (
     <div className="bg-white">
-      <SearchPar />
+      <SearchProvider>
+        <SearchParContainer />
+      </SearchProvider>
     </div>
   );
 }
